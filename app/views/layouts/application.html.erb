@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TweetApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-logo">
+        <!-- 以下のリンクをlink_toメソッドを用いて変更してください -->
+        <%= link_to("mr.children_fun","/") %>
+      </div>
+      <ul class="header-menus">
+        <li>
+          <!-- 以下のリンクをlink_toメソッドを用いて変更してください -->
+         <%= link_to("mr.children_funとは","/about") %>
+        </li>
+        <li>
+          <!-- ここにlink_toメソッドを用いて投稿一覧ページへのリンクを作成してください -->
+          <%= link_to("love一覧","/posts/index") %>
+        </li>
+        
+        <li>
+          <!-- ここに新規投稿ページへのリンクを追加してください -->
+          <%= link_to("love投稿", "/posts/new") %>
+        </li>
+     
+      </ul>
+    </header>
+     <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
+
